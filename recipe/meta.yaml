@@ -1,0 +1,39 @@
+{% set versions = {
+    "0.0.20" : "06c3cb7eb003cefc8a37d51c5c6459e6105c6a7567a1b55839f48d374d30d1f9"
+} %}
+
+
+{% set version = environ.get('COMMIT_VERSION', None) %}
+{% set version = version or versions.keys()|first %}
+{% set version = version|string %}
+
+package:
+  name: {{ environ.get('ANACONDA_PACKAGE', "ploughshare")|string|lower }}
+  version: {{ environ.get('ANACONDA_VERSION', version)|replace('/', '.')|replace('-', '.') }}
+
+source:
+  url: "https://ploughshare.hepforge.org/downloads/ploughshare-{{ version }}.tgz"
+  {% if versions.get(version, None) %}
+  sha256: {{ versions.get(version) }}
+  {% endif %}
+
+requirements:
+  build:
+    - {{ compiler('gfortran') }}   # GNU Fortran compiler
+    - {{ compiler('c') }}          # GNU C compiler
+    - {{ compiler('cxx') }}        # GNU C++ compiler
+    
+    - cmake                        # Build system
+    - make                         # Make utility
+
+about:
+  home: "https://ploughshare.web.cern.ch"
+  license: "GPL-3.0"
+  summary: "Ploughshare for all your interpolation grid needs"
+  description: |
+     Ploughshare allows users from the HEP community to share fast interpolation grids in a standardised way
+     PDF fitters and those from the experimental collaborations are able to upload their validated grids and access the grids of others quickly and with minimal fuss
+
+extra:
+  recipe-maintainers:
+    - meiyasan
