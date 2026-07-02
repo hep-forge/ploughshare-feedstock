@@ -25,6 +25,7 @@ requirements:
     
     - cmake                        # Build system
     - make                         # Make utility
+    - gnuconfig
 
 about:
   home: "https://ploughshare.web.cern.ch"
