@@ -16,7 +16,7 @@ Ploughshare for all your interpolation grid needs
 | Architecture | Latest published |
 |--------------|------------------|
 | linux-amd64 (`linux-64`) | ✅ `0.0.20` |
-| linux-arm64 (`linux-aarch64`) | ❌ not published |
+| linux-arm64 (`linux-aarch64`) | ✅ `0.0.20` |
 
 _As of the last feedstock render; the badges above are live._
 
