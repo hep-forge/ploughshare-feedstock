@@ -13,7 +13,12 @@ Ploughshare for all your interpolation grid needs
 
 ## Architectures
 
-State per architecture: see the platforms badge above or [anaconda.org/hep-forge/ploughshare](https://anaconda.org/hep-forge/ploughshare).
+| Architecture | Latest published |
+|--------------|------------------|
+| linux-amd64 (`linux-64`) | ✅ `0.0.20` |
+| linux-arm64 (`linux-aarch64`) | ✅ `0.0.20` |
+
+_As of the last feedstock render; the badges above are live._
 
 
 ## Install
